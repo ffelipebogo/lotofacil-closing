@@ -1,8 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Gerador de Combinações para Lotofácil
+Este projeto é um gerador de combinações para apostas na Lotofácil, uma loteria brasileira. Ele permite ao usuário gerar quatro jogos de 15 dezenas cada, baseados nas dezenas sorteadas no último concurso ou em dezenas informadas manualmente. O usuário tem a opção de definir dezenas fixas que vieram do último sorteio e dezenas fixas que não vieram do último sorteio, personalizando assim as combinações geradas.
 
-## Getting Started
+## Como Funciona
+# O projeto opera da seguinte maneira:
 
-First, run the development server:
+* O usuário escolhe se deseja usar as dezenas do último sorteio ou informar manualmente as dezenas.
+* Se optar pelo último sorteio, o projeto faz uma requisição à API da Lotofácil para obter as dezenas sorteadas no último concurso.
+* Se optar por informar manualmente, o usuário deve inserir exatamente 15 dezenas válidas (números entre 1 e 25, sem duplicatas).
+* O usuário pode definir 3 dezenas fixas que vieram do último sorteio. Caso não defina, o sistema as escolherá aleatoriamente.
+* O usuário pode definir 2 dezenas fixas que não vieram do último sorteio. Caso não defina, o sistema as escolherá aleatoriamente.
+* O projeto gera quatro combinações de 15 dezenas cada, seguindo as regras de fixação e agrupamento.
+* As combinações são exibidas na tela, com a opção de copiar cada uma delas.
+
+## Requisitos
+# Para rodar o projeto, você precisará de:
+
+Node.js (versão 14 ou superior)
+npm (versão 6 ou superior)
+# Instalação
+Siga os passos abaixo para configurar o projeto em sua máquina:
+
+# Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+```
+
+# Navegue até o diretório do projeto:
+```bash
+cd seu-repositorio
+```
+# Instale as dependências:
+```bash
+npm install
+```
+
+## Uso
+# Para utilizar o projeto, siga estas instruções:
+
+Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
@@ -13,24 +48,22 @@ pnpm dev
 # or
 bun dev
 ```
+Abra o navegador e acesse http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Escolha uma das opções:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Usar as dezenas do último sorteio: Clique em "Obter Último Sorteio".
+Informar manualmente: Insira as 15 dezenas no campo fornecido e clique em "Confirmar".
+Defina as dezenas fixas, se desejar:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3 dezenas fixas sorteadas: Escolha entre as dezenas do último sorteio (opcional).
+2 dezenas fixas não sorteadas: Escolha entre as dezenas restantes (opcional).
+Caso não sejam definidas, o sistema escolherá aleatoriamente.
+Clique em "Gerar Combinações" para criar os quatro jogos.
 
-## Learn More
+As combinações aparecerão na tela. Clique no botão "Copiar" ao lado de cada uma para copiar o texto.
 
-To learn more about Next.js, take a look at the following resources:
+Para começar de novo, clique em "Resetar".
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Créditos
+Este projeto foi desenvolvido com base em um passo a passo detalhado fornecido pelo usuário. Agradecimentos especiais a ele por compartilhar as instruções que tornaram este projeto possível.
